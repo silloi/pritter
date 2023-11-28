@@ -21,7 +21,7 @@ def form():
             username = request.form.get('username')
             userid = request.form.get('userid')
 
-            url = f"https://vercel-og-pritter.vercel.app/api/static?message={message}"
+            url = f"https://vercel-og-pritter.vercel.app/api/pritter?message={message}"
             if username:
                 url += f"&username={username}"
             if userid:
