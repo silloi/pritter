@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, redirect, request, url_for
 import requests
 import subprocess
 
@@ -47,7 +47,8 @@ def form():
 
             # Check if the command was successful
             if result.returncode == 0:
-                return 'Printed successfully'
+                # データの処理（保存等）が完了したらホームにリダイレクト
+                return redirect(url_for('form'))
             else:
                 return 'Error in printing', 500
 
