@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pritter</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <form method="POST">
+      <textarea
+        id="message"
+        name="message"
+        placeholder="いまどうしてる？"
+        required
+      ></textarea>
+
+      <details>
+        <summary>オプション</summary>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="WISS2023 参加者"
+        />
+
+        <input type="text" id="userid" name="userid" placeholder="@wiss2023" />
+      </details>
+
+      <input type="submit" value="プリントする" />
+    </form>
+  </body>
+</html>
