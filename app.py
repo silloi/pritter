@@ -15,13 +15,14 @@ def hello_world():
 def print_online_picture():
     try:
         # Get the URL from the query parameter
-        image_url = request.args.get(
-            'https://vercel-og-pritter.vercel.app/api/static')
-        if not image_url:
-            return 'No image URL provided', 400
+        message = request.args.get(
+            'message')
+        if not message:
+            return 'No message provided', 400
 
         # Fetch the image
-        response = requests.get(image_url)
+        response = requests.get(
+            f"https://vercel-og-pritter.vercel.app/api/static?message={message}")
         if response.status_code != 200:
             return 'Failed to fetch image', 500
 
